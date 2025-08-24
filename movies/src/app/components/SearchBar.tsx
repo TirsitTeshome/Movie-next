@@ -18,17 +18,12 @@ export default function SearchBar() {
     <form onSubmit={onSearch} className="m-5 flex">
       <input
         type="text"
-        placeholder="Search movies or series..."
+        placeholder="Search"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="px-4 py-2 w-3/5 text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
+        className="px-17 py-1 w-7/5 text-base border border-gray-300 rounded-10xl focus:outline-none focus:ring"
       />
-      <button
-        type="submit"
-        className="ml-3 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-base"
-      >
-        Search
-      </button>
+  
     </form>
   );
 }

@@ -6,6 +6,7 @@ import useFavorites from "./hooks/useFavourites";
 import MovieHero from "./components/MovieHero";
 import MovieCard from "./components/MovieCard";
 import SearchBar from "./components/SearchBar";
+import { Roboto, Nunito } from "next/font/google";
 
 export default function Home() {
   const { movies, loading, error } = useLatestMovies();
@@ -35,7 +36,7 @@ export default function Home() {
         />
       )}
       <section className="p-5">
-        <h2 className="text-2xl font-semibold mb-5">Latest Movies & Series</h2>
+        <h2 className="text-5xl font-semibold mt-20 mb-10">Latest Movies & Series</h2>
         <div className="flex flex-wrap gap-5">
           {movies.map((m) => (
             <MovieCard

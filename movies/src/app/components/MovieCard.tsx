@@ -20,9 +20,9 @@ export default function MovieCard({ movie, onAddFavorite, onRemoveFavorite, isFa
   };
 
   return (
-    <div className="w-44 m-2 rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-800">
+    <div className="w-100  m-auto rounded-lg overflow-hidden shadow-lg dark:bg-black">
       <img src={posterUrl} alt={movie.title} className="w-full object-cover" />
-      <div className="p-3">
+      <div className="p-3 m-auto, text ite">
         <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{movie.title}</h3>
         <p className="text-gray-600 dark:text-gray-300">Rating: {movie.vote_average}</p>
         {onAddFavorite && !isFavorite && (

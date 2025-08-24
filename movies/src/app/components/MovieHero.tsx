@@ -1,4 +1,5 @@
 import { TMDBMovie } from "../utils/type";
+import { Roboto, Nunito } from "next/font/google";
 
 interface Props {
   movie: TMDBMovie;
@@ -13,20 +14,20 @@ export default function MovieHero({ movie, onAddFavorite, isFavorite }: Props) {
 
   return (
     <section
-      className="relative h-[60vh] bg-cover bg-center text-white p-10 flex flex-col justify-center"
+      className="relative h-[80vh] bg-cover bg-center text-white p-10 flex flex-col justify-center"
       style={{ backgroundImage: `url(${backdropUrl})` }}
     >
-      <h1 className="text-5xl font-extrabold mb-4">{movie.title}</h1>
-      <p className="max-w-3xl mb-6">{movie.overview}</p>
+      <h1 className="text-7xl font-extrabold">{movie.title}</h1>
+      <p className="max-w-3xl mb-6 text-2">{movie.overview}</p>
       {!isFavorite(movie.id) ? (
         <button
           onClick={() => onAddFavorite(movie)}
-          className="mt-5 px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition"
+          className="mt-5 px-6 py-3 w-1/5 rounded-lg hover:bg-blue-700 transition"
         >
           Add to Favorites
         </button>
       ) : (
-        <button disabled className="mt-5 px-6 py-3 bg-gray-500 rounded-lg cursor-not-allowed">
+        <button disabled className="mt-5 px-6 py-3 w-1/5 bg-gray-500 rounded-lg cursor-not-allowed">
           In Favorites
         </button>
       )}
