@@ -10,7 +10,7 @@ export default function Footer() {
           <h3 className="text-sm font-semibold mb-2">Download Our App</h3>
           <div className="flex items-center space-x-2 mb-4">
             <Image
-              src="/images/popCorn.jpg"  // use /images from public folder
+              src="/images/popCorn.jpg"  
               alt="Moovie"
               width={32}
               height={32}
@@ -85,7 +85,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Share Website Via */}
         <div className="space-y-3">
           <h3 className="text-2xl font-semibold mb-2">Share Website Via:</h3>
           <div className="flex space-x-4 text-gray-400">
@@ -99,7 +98,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Copyright */}
+
       <div className="mt-8 border-t border-gray-700 pt-4 text-center text-gray-500 text-xs">
         © 2023 Movies. All Rights Reserved.
       </div>

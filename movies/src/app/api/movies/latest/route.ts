@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  // Log environment variable to verify loading
   console.log("TMDB_API_KEY:", process.env.TMDB_API_KEY);
 
   const API_KEY = process.env.TMDB_API_KEY;
@@ -14,7 +13,6 @@ export async function GET() {
   }
 
   try {
-    // Fetch latest movies from TMDB API
     const response = await fetch(
       `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`
     );
@@ -30,10 +28,9 @@ export async function GET() {
 
     const data = await response.json();
 
-    // Return JSON response for the client
+  
     return NextResponse.json(data);
   } catch (error: unknown) {
-    // Handle unknown errors with type safety
     if (error instanceof Error) {
       console.error("Unexpected error fetching TMDB movies:", error.message);
       return NextResponse.json(
