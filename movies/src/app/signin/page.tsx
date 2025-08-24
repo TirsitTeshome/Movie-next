@@ -26,7 +26,7 @@ export default function SignInPage() {
                 onSubmit={handleSubmit}
                 className="relative w-full max-w-md rounded bg-white p-8 shadow-md"
             >
-                <h2 className="mb-6 text-center text-2xl font-bold text-gray-700">Sign In</h2>
+                <h2 className="mb-6 text-center text-2xl font-bold text-yellow-500">Sign In</h2>
                 <label className="mb-2 block font-semibold text-gray-600" htmlFor="email">
                     Email
                 </label>
@@ -36,8 +36,8 @@ export default function SignInPage() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="mb-4 w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-600 focus:outline-none text-black"
-                    placeholder="you@example.com"
+                    className="mb-4 w-full rounded border border-gray-300 px-3 py-2  focus:outline-none text-black"
+                    placeholder="tirsit@gmail.com"
                 />
                 <label className="mb-2 block font-semibold text-gray-600" htmlFor="password">
                     Password
