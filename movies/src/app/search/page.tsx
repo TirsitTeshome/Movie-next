@@ -9,15 +9,15 @@ export default function SearchPage() {
   const query = searchParams.get("query") || "";
   const { results, loading, error } = useSearch(query);
 
-  if (!query) return <p>Please enter search query.</p>;
-  if (loading) return <p>Searching...</p>;
-  if (error) return <p>{error}</p>;
+  if (!query) return <p className="text-center text-gray-600 mt-8">Please enter search query.</p>;
+  if (loading) return <p className="text-center text-gray-600 mt-8">Searching...</p>;
+  if (error) return <p className="text-center text-red-600 mt-8">{error}</p>;
 
   return (
-    <section style={{ padding: 20 }}>
-      <h1>Search results for "{query}"</h1>
-      {results.length === 0 && <p>No movies found.</p>}
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
+    <section className="p-5">
+      <h1 className="text-3xl font-bold mb-6">Search results for &quot;{query}&quot;</h1>
+      {results.length === 0 && <p className="text-center text-gray-500">No movies found.</p>}
+      <div className="flex flex-wrap gap-5 justify-center">
         {results.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
