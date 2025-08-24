@@ -1,46 +1,26 @@
-import { useState } from "react";
-import { TMDBMovie } from "../utils/type";
+"use client";
 
-interface Props {
-  movie: TMDBMovie;
-  onAddFavorite: (movie: TMDBMovie) => void;
-  isFavorite: boolean;
-}
+import useFavorites from "../hooks/useFavourites";
+import MovieCard from "../components/MovieCard";
 
-export default function MovieCard({ movie, onAddFavorite, isFavorite }: Props) {
-  const [added, setAdded] = useState(false);
+export default function FavoritesPage() {
+  const { favorites, removeFavorite, isFavorite } = useFavorites();
 
-  const handleAddFavorite = () => {
-    onAddFavorite(movie);
-    setAdded(true);
-    setTimeout(() => {
-      setAdded(false);
-    }, 2000); // Show message for 2 seconds
-  };
+  if (favorites.length === 0) return <p className="text-center text-gray-500 mt-8">No favorites yet.</p>;
 
   return (
-    <div className="w-44 m-2 rounded-lg overflow-hidden shadow-lg bg-white">
-      <img
-        src={movie.poster_path ? `https://image.tmdb.org/t/p/w300${movie.poster_path}` : "/placeholder.png"}
-        alt={movie.title}
-        className="w-full object-cover"
-      />
-      <div className="p-3">
-        <h3 className="text-lg font-semibold">{movie.title}</h3>
-        <p className="text-gray-700">Rating: {movie.vote_average}</p>
-        {!isFavorite ? (
-          <button
-            onClick={handleAddFavorite}
-            className="w-full px-3 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-          >
-            {added ? "Added to Favorites" : "Add to Favorites"}
-          </button>
-        ) : (
-          <button disabled className="w-full px-3 py-2 bg-gray-500 text-white rounded cursor-not-allowed">
-            In Favorites
-          </button>
-        )}
+    <main className="p-5">
+      <h1 className="text-3xl font-bold mb-6">Your Favorites</h1>
+      <div className="flex flex-wrap gap-5 justify-center">
+        {favorites.map((movie) => (
+          <MovieCard
+            key={movie.id}
+            movie={movie}
+            onRemoveFavorite={removeFavorite}
+            isFavorite={isFavorite(movie.id)}
+          />
+        ))}
       </div>
-    </div>
+    </main>
   );
 }

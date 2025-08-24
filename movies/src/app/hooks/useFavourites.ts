@@ -11,16 +11,18 @@ export default function useFavorites() {
     if (stored) setFavorites(JSON.parse(stored));
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+  }, [favorites]);
+
   const addFavorite = (movie: TMDBMovie) => {
-    const updated = [...favorites, movie];
-    setFavorites(updated);
-    localStorage.setItem(FAVORITES_KEY, JSON.stringify(updated));
+    if (!favorites.find((m) => m.id === movie.id)) {
+      setFavorites([...favorites, movie]);
+    }
   };
 
   const removeFavorite = (id: number) => {
-    const updated = favorites.filter((m) => m.id !== id);
-    setFavorites(updated);
-    localStorage.setItem(FAVORITES_KEY, JSON.stringify(updated));
+    setFavorites(favorites.filter((m) => m.id !== id));
   };
 
   const isFavorite = (id: number) => favorites.some((m) => m.id === id);

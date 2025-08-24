@@ -6,7 +6,6 @@ import useFavorites from "./hooks/useFavourites";
 import MovieHero from "./components/MovieHero";
 import MovieCard from "./components/MovieCard";
 import SearchBar from "./components/SearchBar";
-import { Roboto, Nunito } from "next/font/google";
 
 export default function Home() {
   const { movies, loading, error } = useLatestMovies();
@@ -22,7 +21,10 @@ export default function Home() {
       <header className="flex justify-between items-center p-5">
         <h1 className="text-3xl font-extrabold">Moovie</h1>
         <SearchBar />
-        <Link href="/favorites">
+        <button className="ml-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+          Signin
+        </button>
+        <Link href="/favourites">
           <button className="ml-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
             Go to Favorites
           </button>

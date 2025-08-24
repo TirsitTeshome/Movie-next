@@ -1,5 +1,5 @@
 import { TMDBMovie } from "../utils/type";
-import { Roboto, Nunito } from "next/font/google";
+
 
 interface Props {
   movie: TMDBMovie;
