@@ -19,12 +19,10 @@ export default function Home() {
 
   return (
     <>
-      <header className="flex items-center p-5">
+      <header className=" w-3/4 m-auto flex items-center p-5">
         <h1 className="text-3xl font-extrabold">Moovie</h1>
         <SearchBar />
-        <Link href="/signin"><button className="ml-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-          Signin
-        </button></Link>
+      
         
 <div>
      <Link href="/"><button className="ml-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
@@ -32,10 +30,13 @@ export default function Home() {
         </button></Link>
 </div>
         <Link href="/favourites">
-          <button className="ml-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+          <button className="ml-4 px-4 py-2 text-white rounded-4xl">
             My List
           </button>
         </Link>
+          <Link href="/signin"><button className="ml-4 px-4 py-2  hover:bg-blue-700 transition rounded-4xl">
+          Signin
+        </button></Link>
       </header>
       {featured && (
         <MovieHero
