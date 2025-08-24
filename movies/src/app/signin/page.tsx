@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-// import { Link } from "react-router-dom";
 import Link from 'next/link';
 
 export default function SignInPage() {
@@ -15,7 +14,6 @@ export default function SignInPage() {
 
     return (
         <div className="relative flex min-h-screen items-center justify-center p-4">
-            {/* Background image */}
             <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
@@ -23,10 +21,7 @@ export default function SignInPage() {
                         "url('https://i.pinimg.com/1200x/f5/f1/6d/f5f16d6b33c0078389c9b452138421c6.jpg')",
                 }}
             />
-            {/* Gradient overlay with Tailwind gradient and opacity */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/30" />
-
-            {/* Form container */}
             <form
                 onSubmit={handleSubmit}
                 className="relative w-full max-w-md rounded bg-white p-8 shadow-md"
@@ -41,7 +36,7 @@ export default function SignInPage() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="mb-4 w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-600 focus:outline-none"
+                    className="mb-4 w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-600 focus:outline-none text-black"
                     placeholder="you@example.com"
                 />
                 <label className="mb-2 block font-semibold text-gray-600" htmlFor="password">

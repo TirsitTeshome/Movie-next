@@ -15,13 +15,13 @@ export default function SearchBar() {
   };
 
   return (
-    <form onSubmit={onSearch} className="m-5 flex">
+    <form onSubmit={onSearch} className=" w-3/4 m-auto flex">
       <input
         type="text"
         placeholder="Search"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="px-17 py-1 w-7/5 text-base border border-gray-300 rounded-10xl focus:outline-none focus:ring"
+        className="px-80 py-2 text-base border border-gray-300 rounded-10xl focus:outline-none focus:ring rounded-4xl"
       />
   
     </form>

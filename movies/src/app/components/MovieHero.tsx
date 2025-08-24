@@ -14,7 +14,7 @@ export default function MovieHero({ movie, onAddFavorite, isFavorite }: Props) {
 
   return (
     <section
-      className="relative h-[80vh] bg-cover bg-center text-white p-10 flex flex-col justify-center"
+      className="relative h-[80vh] bg-cover bg-center text-white p-10 flex flex-col justify-center text-1xl"
       style={{ backgroundImage: `url(${backdropUrl})` }}
     >
       <h1 className="text-7xl font-extrabold">{movie.title}</h1>

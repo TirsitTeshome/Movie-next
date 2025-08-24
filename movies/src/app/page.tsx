@@ -19,17 +19,21 @@ export default function Home() {
 
   return (
     <>
-      <header className="flex justify-between items-center p-5">
+      <header className="flex items-center p-5">
         <h1 className="text-3xl font-extrabold">Moovie</h1>
         <SearchBar />
         <Link href="/signin"><button className="ml-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
           Signin
         </button></Link>
         
-
+<div>
+     <Link href="/"><button className="ml-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+          Home
+        </button></Link>
+</div>
         <Link href="/favourites">
           <button className="ml-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-            Go to Favorites
+            My List
           </button>
         </Link>
       </header>
